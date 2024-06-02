@@ -154,7 +154,7 @@ if(isset($_GET['delete_from_cart'])){
 <body>
 
     <div class="navbar">
-        <div class="head"><h1>KATIPUNAN <img src="../pics/coffee-beans.png" width="50px" height="50px"></h1></div>
+        <div class="head"><h1>KATIPUNAN <img src="../img/coffee-beans.png" width="50px" height="50px"></h1></div>
        
         <a href="../menu.php">Menu</a>
     </div>

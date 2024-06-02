@@ -154,7 +154,7 @@
 <body>
     
   <div class="navbar">
-  <div class="head"><h1>KATIPUNAN <img src="pics/coffee-beans.png" width="50px" height="50px"></h1></div>
+  <div class="head"><h1>KATIPUNAN <img src="img/coffee-beans.png" width="50px" height="50px"></h1></div>
     <a href="#">Home</a>
     <a href="menu.php">Menu</a>
     <a href="about.php">About Us</a>
@@ -165,15 +165,15 @@
  <br><br>
   <div class="slideshow-container">
   <div class="slide fade">
-    <img src="pics/Cappuccino_at_Sightglass_Coffee-1.jpg" class="cof" alt="Coffee 1">
+    <img src="img/Cappuccino_at_Sightglass_Coffee-1.jpg" class="cof" alt="Coffee 1">
   </div>
 
   <div class="slide fade">
-    <img src="pics/Free-Download-Coffee-Wallpapers-High-Quality.jpg" class="cof" alt="Coffee 2">
+    <img src="img/Free-Download-Coffee-Wallpapers-High-Quality.jpg" class="cof" alt="Coffee 2">
   </div>
 
   <div class="slide fade">
-    <img src="pics/OIP.jpg" class="cof" alt="Coffee 3">
+    <img src="img/OIP.jpg" class="cof" alt="Coffee 3">
   </div>
 
   <!-- Navigation arrows -->

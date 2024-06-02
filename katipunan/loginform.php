@@ -103,7 +103,7 @@ session_start();
   <button class="back-button" onclick="goBack()">Go back</button>
     <br><br><br>
   <div class="login-container">
-    <h2 class="header_login">Login <img src="pics/coffee-beans.png" width="30px" height="30px"></h2>
+    <h2 class="header_login">Login <img src="img/coffee-beans.png" width="30px" height="30px"></h2>
     <form class="login-form" action="process_login.php" method="post">
       <div class="input-group">
        

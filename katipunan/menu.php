@@ -96,15 +96,15 @@
     <button class="back-button" onclick="goBack()">Go back</button>
     
     <div class="container">
-    <h2 class="header_login">KATIPUNAN <p>(Menu)</p><img src="pics/coffee-beans.png" width="30px" height="30px" > </h2>
+    <h2 class="header_login">KATIPUNAN <p>(Menu)</p><img src="img/coffee-beans.png" width="30px" height="30px" > </h2>
        
         <div class="category">
             <h3>Coffee</h3>
-            <div class="menu-item" onmouseover="changeImage('pics/black-coffee-benefits.jpg')" onmouseout="resetImage()">
+            <div class="menu-item" onmouseover="changeImage('img/black-coffee-benefits.jpg')" onmouseout="resetImage()">
                 <h4 onclick="showImage('coffee')">Black Coffee</h4>
                 <p>Americano, Brewed Coffee</p>
             </div>
-            <div class="menu-item" onmouseover="changeImage('pics/es.png')" onmouseout="resetImage()">
+            <div class="menu-item" onmouseover="changeImage('img/es.png')" onmouseout="resetImage()">
                 <h4 onclick="showImage('espresso')">Espresso</h4>
                 <p>Single Shot, Double Shot</p>
             </div>
@@ -112,11 +112,11 @@
         </div>
         <div class="category">
             <h3>Frappe</h3>
-            <div class="menu-item" onmouseover="changeImage('pics/classicfrappe.jpg')" onmouseout="resetImage()">
+            <div class="menu-item" onmouseover="changeImage('img/classicfrappe.jpg')" onmouseout="resetImage()">
                 <h4 onclick="showImage('c_frappe')">Classic Frappe</h4>
                 <p>Mocha, Caramel, Vanilla</p>
             </div>
-            <div class="menu-item" onmouseover="changeImage('pics/frapstrawberry.jpg')" onmouseout="resetImage()">
+            <div class="menu-item" onmouseover="changeImage('img/frapstrawberry.jpg')" onmouseout="resetImage()">
                 <h4 onclick="showImage('f_frappe')">Fruit Frappe</h4>
                 <p>Strawberry, Mango, Banana</p>
             </div>
@@ -124,11 +124,11 @@
         </div>
         <div class="category">
             <h3>Pastries</h3>
-            <div class="menu-item" onmouseover="changeImage('pics/croisants.jpg')" onmouseout="resetImage()">
+            <div class="menu-item" onmouseover="changeImage('img/croisants.jpg')" onmouseout="resetImage()">
                 <h4 onclick="showImage('bread')">Croissants</h4>
                 <p>Plain, Chocolate, Almond</p>
             </div>
-            <div class="menu-item" onmouseover="changeImage('pics/muffins.jpg')" onmouseout="resetImage()">
+            <div class="menu-item" onmouseover="changeImage('img/muffins.jpg')" onmouseout="resetImage()">
                 <h4>Muffins</h4>
                 <p onclick="showImage('muffin')">Blueberry, Chocolate Chip, Banana Nut</p>
             </div>
@@ -136,11 +136,11 @@
         </div>
         <div class="category">
             <h3>Snacks</h3>
-            <div class="menu-item" onmouseover="changeImage('pics/chipp.jpg')" onmouseout="resetImage()">
+            <div class="menu-item" onmouseover="changeImage('img/chipp.jpg')" onmouseout="resetImage()">
                 <h4>Chips</h4>
                 <p>Classic, BBQ, Sour Cream</p>
             </div>
-            <div class="menu-item" onmouseover="changeImage('pics/sandwhich.jpg')" onmouseout="resetImage()">
+            <div class="menu-item" onmouseover="changeImage('img/sandwhich.jpg')" onmouseout="resetImage()">
                 <h4>Sandwiches</h4>
                 <p>Ham & Cheese, Turkey Club, Veggie</p>
             </div>
