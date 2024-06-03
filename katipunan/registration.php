@@ -165,7 +165,7 @@
 <button class="back-button" onclick="goBack()">Go back</button>
     <div class="container">
         <div class="registration-form">
-            <h3>Sign Up <img src="pics/coffee-beans.png" width="30px" height="30px"></h3>
+            <h3>Sign Up <img src="img/coffee-beans.png" width="30px" height="30px"></h3>
             <?php
             if(isset($_GET['error'])){
                 echo "Error:" . $_GET['error'];

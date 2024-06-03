@@ -15,13 +15,17 @@ if (isset($_GET['logout'])) {
 // Handle delete item request
 if (isset($_GET['delete_item'])) {
     $item_id = $_GET['delete_item'];
-    $sql_delete_item = "DELETE FROM items WHERE items_id = '$item_id'";
-    if ($conn->query($sql_delete_item) === TRUE) {
-        echo "<script>alert('Item deleted successfully');</script>";
+    
+    // Soft delete by updating item_status or adding an additional column like is_active
+    $sql_update_item_status = "UPDATE items SET item_status = 'Inactive' WHERE items_id = '$item_id'";
+    
+    if ($conn->query($sql_update_item_status) === TRUE) {
+        echo "<script>alert('Item deactivated successfully');</script>";
     } else {
-        echo "<script>alert('Error deleting item: " . $conn->error . "');</script>";
+        echo "<script>alert('Error deactivating item: " . $conn->error . "');</script>";
     }
 }
+
 
 // Handle add/edit item request
 if (isset($_POST['save_item'])) {

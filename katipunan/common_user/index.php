@@ -1,3 +1,4 @@
+
 <?php
 include "../db.php";
 session_start();
@@ -417,7 +418,7 @@ if(isset($_GET['delete_from_cart'])){
                     <?php
                     while ($row = mysqli_fetch_assoc($get_result)) { ?>
                         <tr>
-                            <td><img src="../img/bc.jpg" width="50px" height="50px"><b><?php echo $row['item_name']; ?></b> </td> 
+                            <td><img src="../img/bb-c.jpg" width="50px" height="50px"><b><?php echo $row['item_name']; ?></b> </td> 
                            
                             <td><?php echo "Php " . number_format($row['item_price'], 2); ?></td>
                             <td> 

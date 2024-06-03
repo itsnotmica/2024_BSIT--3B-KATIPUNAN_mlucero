@@ -207,7 +207,7 @@ if(isset($_GET['delete_from_cart'])){
                                         <div class="card-body">
                                             <?php
                                     //generate order reference number
-                                    $order_number=(8);
+                                    $order_number = uniqid(); 
 
                                                 $sql_checkout="SELECT i.item_name
                                                                 , i.item_price

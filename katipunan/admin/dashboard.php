@@ -99,6 +99,7 @@ if (isset($_GET['logout'])) {
                        <div class="card-body">
                            <h1 class="display-1">
                                <?php $sql_get_totalsales = "SELECT * FROM `total_per_item`";
+
                                
                                      $sales_result = mysqli_query($conn, $sql_get_totalsales); ?>
                                
@@ -112,16 +113,17 @@ if (isset($_GET['logout'])) {
                                      <?php 
                                        $total = 0.00;
                                        while($rec = mysqli_fetch_assoc($sales_result)){
-                                        $total += $rec['total_amt'];
-                                        ?>
-                                    <tr>
-                                        <td><?php echo $rec['item_name'];?></td>
-                                        <td><?php echo $rec['total_item_qty'];?></td>
-                                        <td><?php echo "Php " . number_format($rec['total_amt'],2);?></td>
-                                    </tr>      
-                                             
-                                         
-                                     <?php } ?>
+                                        // Make sure 'total_amt' is present in the fetched result
+                                        if(isset($rec['total_amt'])) {
+                                            $total += $rec['total_amt'];
+                                            ?>
+                                            <tr>
+                                                <td><?php echo $rec['item_name'];?></td>
+                                                <td><?php echo $rec['total_item_qty'];?></td>
+                                                <td><?php echo "Php " . number_format($rec['total_amt'],2);?></td>
+                                            </tr>      
+                                        <?php }
+                                     } ?>
                                     <tr>
                                         <td colspan=3 class="bg-light"> <small class="float-end"><?php echo "Php " . number_format($total,2);?></small> </td>
                                     </tr>
@@ -138,34 +140,34 @@ if (isset($_GET['logout'])) {
                        <small class="small">Per Day</small>
                        <div class="card-body">
                            <h1 class="display-1">
-                               <?php $sql_get_totalsales = "SELECT * FROM `total_per_date`";
-                               
-                                     $sales_result = mysqli_query($conn, $sql_get_totalsales); ?>
-                               
-                               
-                                <table class="table table-striped">
-                                    <tr>
-                                        <th>Date</th>
-                                        <th>Total Item Qty</th>
-                                        <th>Total Sales</th>
-                                    </tr>
-                                     <?php 
-                                    $total = 0.00;
-                                    while($rec = mysqli_fetch_assoc($sales_result)){
-                                    $total += $rec['total_amt'];?>
-                                    <tr>
-                                        <td><?php echo $rec['transaction_date'];?></td>
-                                        <td><?php echo $rec['total_item_qty'];?></td>
-                                        <td><?php echo "Php " . number_format($rec['total_amt'],2);?></td>
-                                    </tr>      
-                                             
-                                         
-                                     <?php } ?>
-                               
-                                    <tr>
-                                        <td colspan=3 class="bg-light"> <small class="float-end"><?php echo "Php " . number_format($total,2);?></small> </td>
-                                    </tr>
-                                </table>
+                           <?php 
+$sql_get_totalsales_per_day = "SELECT transaction_date, SUM(total_item_qty) AS total_item_qty, SUM(total_amt) AS total_sales 
+                                FROM `total_per_date` 
+                                GROUP BY transaction_date";
+
+$sales_result_per_day = mysqli_query($conn, $sql_get_totalsales_per_day); 
+?>
+<table class="table table-striped">
+    <tr>
+        <th>Date</th>
+        <th>Total Item Qty</th>
+        <th>Total Sales</th>
+    </tr>
+    <?php 
+    $total_per_day = 0.00;
+    while($rec_per_day = mysqli_fetch_assoc($sales_result_per_day)){
+        $total_per_day += $rec_per_day['total_sales'];?>
+        <tr>
+            <td><?php echo $rec_per_day['transaction_date'];?></td>
+            <td><?php echo $rec_per_day['total_item_qty'];?></td>
+            <td><?php echo "Php " . number_format($rec_per_day['total_sales'],2);?></td>
+        </tr>      
+    <?php } ?>
+    <tr>
+        <td colspan=3 class="bg-light"> <small class="float-end"><?php echo "Php " . number_format($total_per_day,2);?></small> </td>
+    </tr>
+</table>
+
                                
                            </h1>
                        </div>
@@ -179,6 +181,7 @@ if (isset($_GET['logout'])) {
                        <div class="card-body">
                            <h1 class="display-1">
                                <?php $sql_get_totalsales = "SELECT * FROM `total_per_order`";
+
                                
                                      $sales_result = mysqli_query($conn, $sql_get_totalsales); ?>
                                
@@ -192,16 +195,17 @@ if (isset($_GET['logout'])) {
                                      <?php 
                                      $total = 0.00;
                                     while($rec = mysqli_fetch_assoc($sales_result)){
-                                     $total += $rec['total_amt'];
-                                    ?>
-                                    <tr>
-                                        <td><?php echo $rec['order_ref_number'];?></td>
-                                        <td><?php echo $rec['total_item_qty'];?></td>
-                                        <td><?php echo "Php " . number_format($rec['total_amt'],2);?></td>
-                                    </tr>      
-                                             
-                                         
-                                     <?php } ?>
+                                        // Make sure 'total_amt' is present in the fetched result
+                                        if(isset($rec['total_amt'])) {
+                                            $total += $rec['total_amt'];
+                                            ?>
+                                            <tr>
+                                                <td><?php echo $rec['order_ref_number'];?></td>
+                                                <td><?php echo $rec['total_item_qty'];?></td>
+                                                <td><?php echo "Php " . number_format($rec['total_amt'],2);?></td>
+                                            </tr>      
+                                        <?php }
+                                     } ?>
                                        <tr>
                                         <td colspan=3 class="bg-light"> <small class="float-end"><?php echo "Php " . number_format($total,2);?></small> </td>
                                     </tr>
@@ -219,6 +223,8 @@ if (isset($_GET['logout'])) {
                        <div class="card-body">
                            <h1 class="display-1">
                                <?php $sql_get_totalsales = "SELECT * FROM `total_per_user`";
+
+
                                
                                      $sales_result = mysqli_query($conn, $sql_get_totalsales); ?>
                                
@@ -233,17 +239,18 @@ if (isset($_GET['logout'])) {
                                      <?php 
                                     $total=0.00;
                                     while($rec = mysqli_fetch_assoc($sales_result)){
-                                     $total += $rec['total_amt'];
-                                    ?>
-                                    <tr>
-                                        <td><?php echo $rec['fullname'];?></td>
-                                        <td><?php echo $rec['username'];?></td>
-                                        <td><?php echo $rec['total_item_qty'];?></td>
-                                        <td><?php echo "Php " . number_format($rec['total_amt'],2);?></td>
-                                    </tr>      
-                                             
-                                         
-                                     <?php } ?>
+                                        // Make sure 'total_amt' is present in the fetched result
+                                        if(isset($rec['total_amt'])) {
+                                            $total += $rec['total_amt'];
+                                            ?>
+                                            <tr>
+                                                <td><?php echo $rec['fullname'];?></td>
+                                                <td><?php echo $rec['username'];?></td>
+                                                <td><?php echo $rec['total_item_qty'];?></td>
+                                                <td><?php echo "Php " . number_format($rec['total_amt'],2);?></td>
+                                            </tr>      
+                                        <?php }
+                                     } ?>
                                
                                        <tr>
                                         <td colspan=4 class="bg-light"> <small class="float-end"><?php echo "Php " . number_format($total,2);?></small> </td>
